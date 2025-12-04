@@ -119,22 +119,12 @@ export default function ContactForm({
     <div className={`c-contact-form ${className}`}>
       {/* Loading spinner */}
       {isLoading && (
-        <div
-          className="form-loader"
-          style={{ textAlign: "center", padding: "40px 20px" }}
-        >
+        <div className="form-loader-container" aria-live="polite">
           <div
-            className="spinner"
-            style={{
-              width: "40px",
-              height: "40px",
-              border: "4px solid #f3f3f3",
-              borderTop: "4px solid #006a4e",
-              borderRadius: "50%",
-              margin: "0 auto 15px",
-              animation: "spin 1s linear infinite",
-            }}
-          ></div>
+            className="form-loader"
+            role="status"
+            aria-label="Loading contact form"
+          />
         </div>
       )}
 
@@ -146,15 +136,6 @@ export default function ContactForm({
       />
 
       <style jsx>{`
-        @keyframes spin {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-
         /* HubSpot form styling to match theme */
         :global(.c-contact-form .hs-form) {
           font-family: var(--rubik) !important;
