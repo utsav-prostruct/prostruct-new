@@ -85,6 +85,20 @@ body {
   letter-spacing: 0.02em;
 }
 
+.civil-service-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.civil-service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #0b2230;
+}
+
 @keyframes form-loader-spin {
   from {
     transform: rotate(0deg);
