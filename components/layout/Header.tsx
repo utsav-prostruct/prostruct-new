@@ -275,7 +275,7 @@ export function Header() {
                         )}
                       </div>
                       {hasChildren && (
-                        <ul className={isOpen ? "show" : ""}>
+                        <ul className={isOpen ? "sub-menu show" : "sub-menu"}>
                           {item.children!.map((child) => (
                             <li key={child.id}>
                               <Link href={child.url} onClick={closeMobileMenu}>
