@@ -6,22 +6,39 @@ export default function Page() {
           <div className="mb-6 pb-4 border-b">
             <span className="text-sm text-gray-500">Page ID: 1125</span>
           </div>
-          
+
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Our Structural Engineers For<br /> Your New Custom Home
+            Our Structural Engineers For
+            <br /> Your New Custom Home
           </h1>
-          
+
           <div className="space-y-4 text-gray-600">
-            <p><strong>Slug:</strong> for-new-custom-home</p>
-            <p><strong>Template:</strong> page-templates/new-custom-home-page.php</p>
-            <p><strong>Last Modified:</strong> 5/11/2024</p>
-            <p><strong>Original URL:</strong> <a href="https://prostructengineering.com/structural-engineers/services/for-new-custom-home/" target="_blank" rel="noopener" className="text-blue-600 hover:underline">https://prostructengineering.com/structural-engineers/services/for-new-custom-home/</a></p>
+            <p>
+              <strong>Slug:</strong> for-new-custom-home
+            </p>
+            <p>
+              <strong>Template:</strong> page-templates/new-custom-home-page.php
+            </p>
+            <p>
+              <strong>Last Modified:</strong> 5/11/2024
+            </p>
+            <p>
+              <strong>Original URL:</strong>{" "}
+              <a
+                href="https://prostructengineering.com/structural-engineers/services/for-new-custom-home/"
+                target="_blank"
+                rel="noopener"
+                className="text-blue-600 hover:underline"
+              >
+                https://prostructengineering.com/structural-engineers/services/for-new-custom-home/
+              </a>
+            </p>
           </div>
-          
+
           <div className="mt-8 p-4 bg-blue-50 rounded-lg">
             <p className="text-sm text-blue-800">
-              This page was automatically generated from WordPress. 
-              Content will be added in the migration process.
+              This page was automatically generated from WordPress. Content will
+              be added in the migration process.
             </p>
           </div>
         </div>
@@ -29,4 +46,3 @@ export default function Page() {
     </div>
   );
 }
-
