@@ -299,7 +299,9 @@ export function ServicesPage({ data }: ServicesPageProps) {
                 >
                   <div className="service_bottom_right text-white">
                     <h2 className="d-none d-sm-block">{detail.heading}</h2>
-                    {parse(detail.descriptionHtml)}
+                    <div className="text-black">
+                      {parse(detail.descriptionHtml)}
+                    </div>
                   </div>
                 </div>
               </div>

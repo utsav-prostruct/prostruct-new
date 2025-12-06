@@ -195,6 +195,19 @@ export function Footer() {
   };
 
   const currentState = getCurrentState();
+
+  // Get URL prefix for service links based on current path
+  // State-specific pages (california, texas, etc.) use root-relative URLs
+  // Default pages (homepage, /structural-engineers/*) need the full prefix
+  const getServiceUrlPrefix = () => {
+    if (currentState === "default") {
+      return "/structural-engineers/services";
+    }
+    // State pages don't need prefix - they use root-relative URLs
+    return "";
+  };
+
+  const serviceUrlPrefix = getServiceUrlPrefix();
   const contactInfo = STATE_CONTACTS[currentState] || STATE_CONTACTS.default;
 
   const serviceAreaColumns = isServiceAreaContact(contactInfo)
@@ -254,18 +267,23 @@ export function Footer() {
                   <ul>
                     {FOOTER_MENU_1.map((item) => (
                       <li key={item.id}>
-                        <Link href={item.url}>{item.title}</Link>
+                        <Link href={`${serviceUrlPrefix}${item.url}`}>{item.title}</Link>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="col-sm-6 col-lg-7">
                   <ul>
-                    {FOOTER_MENU_2.map((item) => (
-                      <li key={item.id}>
-                        <Link href={item.url}>{item.title}</Link>
-                      </li>
-                    ))}
+                    {FOOTER_MENU_2.map((item) => {
+                      // These URLs are absolute and don't need the service prefix
+                      const noPrefix = ['/civil-engineers', '/commercial-services', '/permit-guarantee', '/privacy-policy'];
+                      const needsPrefix = !noPrefix.some(p => item.url.startsWith(p));
+                      return (
+                        <li key={item.id}>
+                          <Link href={needsPrefix ? `${serviceUrlPrefix}${item.url}` : item.url}>{item.title}</Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
